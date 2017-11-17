@@ -702,6 +702,23 @@ SpeechToTextV1.prototype.getCustomizations = function(params, callback) {
   return requestFactory(parameters, callback);
 };
 
+SpeechToTextV1.prototype.getAcousticCustomizations = function(params, callback) {
+  if (typeof params === 'function' && !callback) {
+    callback = params;
+    params = {};
+  }
+  const parameters = {
+    options: {
+      method: 'GET',
+      url: '/v1/acoustic_customization/',
+      qs: pick(params, ['language']),
+      json: true
+    },
+    defaultOptions: this._options
+  };
+  return requestFactory(parameters, callback);
+};
+
 /**
  * Get customization details
  *
