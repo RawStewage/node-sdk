@@ -710,7 +710,7 @@ SpeechToTextV1.prototype.getAcousticCustomizations = function(params, callback) 
   const parameters = {
     options: {
       method: 'GET',
-      url: '/v1/acoustic_customization/',
+      url: '/v1/acoustic_customizations/',
       qs: pick(params, ['language']),
       json: true
     },
